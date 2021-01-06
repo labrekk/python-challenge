@@ -59,13 +59,13 @@ with open(budget_csv, newline='') as csvfile:
     avg_change = ((sum(monthly_changes))/(len(monthly_changes)))
 
     #https://www.tutorialspoint.com/python/list_max.htm
+
     max = max(monthly_changes)
-    max_row = monthly_changes.index(max)
-
+    #i assumed the function would be along the same lines for min.
     min = min(monthly_changes)
-    min_row = monthly_changes.index(min)
 
-    #print financial analysis
+
+    #print financial analysis - it should look like the next several lines below:
 #   Total Months: 86
 #   Total: $38382578
 #   Average  Change: $-2315.12
@@ -79,9 +79,21 @@ with open(budget_csv, newline='') as csvfile:
     print (f"Greatest Increase in Profits: $ {max}")
     print (f"Greatest decrease in profits: $ {min}")
 
+#https://www.guru99.com/reading-and-writing-files-in-python.html
+f = open("analysis.txt", "w+")
 
+#Source for \n bits:
+#https://www.freecodecamp.org/news/python-new-line-and-how-to-python-print-without-a-newline/#:~:text=The%20new%20line%20character%20in%20Python%20is%20%5Cn%20.,used%20to%20separate%20the%20lines.
+f.write("Financial Analysis\n")
+f.write ("----------------------------\n")
+f.write (f"Total Months: {months}\n")
+f.write (f"Net profit for period = $ {netprofit}\n")
+f.write (f"The average change month to month = $ {avg_change}\n")
+f.write (f"Greatest Increase in Profits: $ {max}\n")
+f.write (f"Greatest decrease in profits: $ {min}\n")
 
-        
+f.close()   
+
 
 
 

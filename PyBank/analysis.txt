@@ -1,0 +1,7 @@
+Financial Analysis
+----------------------------
+Total Months: 86
+Net profit for period = $ 38382578.0
+The average change month to month = $ 7803.476744186047
+Greatest Increase in Profits: $ 1926159.0
+Greatest decrease in profits: $ -2196167.0
