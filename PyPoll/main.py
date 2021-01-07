@@ -64,6 +64,8 @@ with open(poll_csv, newline='') as csvfile:
         percentli = (votesli / total_votes)*100
         percentotooley = (votesotooley/total_votes)*100
     
+    winner = max(voteskhan, votescorrey, votesli, votesotooley)
+
 #       Election Results
 #   -------------------------
 #   Total Votes: 3521001
@@ -83,6 +85,7 @@ with open(poll_csv, newline='') as csvfile:
     print (f"Correy: {percentcorrey} ({votescorrey})")
     print (f"Li: {percentli} ({votesli})")
     print (f"O'Tooley: {percentotooley} ({votesotooley})")
+    print(f"Winner: {winner}")
             
 #https://www.guru99.com/reading-and-writing-files-in-python.html
 f = open("Election_analysis.txt", "w+")
@@ -96,6 +99,8 @@ f.write (f"Khan: {percentkhan} ({voteskhan})\n")
 f.write (f"Correy: {percentcorrey} ({votescorrey})\n")
 f.write (f"Li: {percentli} ({votesli})\n")
 f.write (f"O'Tooley: {percentotooley} ({votesotooley})\n")
+f.write ("----------------------------\n")
+f.write (f"Winner: {winner}\n")
 
 f.close()   
 
